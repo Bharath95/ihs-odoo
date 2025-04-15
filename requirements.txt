@@ -1,0 +1,5 @@
+psycopg2-binary
+Pillow
+ruff
+pre-commit
+# Add other dependencies as needed

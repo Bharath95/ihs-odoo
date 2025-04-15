@@ -1,0 +1,23 @@
+[tool.ruff]
+lint.select = ["ALL"]
+lint.ignore = ["F821", "F823", "F841", "E501", "INP001", "D100", "D101", "D205", "D400", "D415", "ANN201"]
+line-length = 100
+fix = true
+exclude = [
+    "odoo",
+    ".venv",
+    "venv",
+    "env",
+    ".git",
+    "**/.git",
+    "**/.gitignore",
+    "**/.gitmodules",
+    "**/*.yaml",
+    "**/*.yml",
+    "**/*.txt"
+]
+
+[tool.ruff.lint.per-file-ignores]
+"**/__init__.py" = ["ALL"]
+"**/__manifest__.py" = ["ALL"]
+"**/__openerp__.py" = ["ALL"]
