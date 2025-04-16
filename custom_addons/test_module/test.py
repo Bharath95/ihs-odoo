@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
 # small_lint_sample.py
 
-import os, sys     # Multiple imports on one line (usually flagged)
 
 def add(x,y):      # Missing space after comma
     result=x+y     # Missing spaces around operator
-    return result  
+    return result
 
 # Unused variable
 unused = "This will be flagged"
