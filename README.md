@@ -38,6 +38,18 @@ Before running Odoo, make sure you have PostgreSQL running and a database/user c
 
 - **Database user:** odoo
 - **Database password:** odoo
+
+## Dependency Installation
+
+Install dependencies from both root and `odoo/requirements.txt`; update environment as follows:
+
+```sh
+pip3 install -r requirements.txt
+cd odoo
+pip3 install -r requirements.txt
+```
+
+This ensures all required Python packages for both the project and the Odoo source are installed.
 - **Database name:** ihs_root
 
 You can create the user and database with the following commands (run as a user with permission to manage PostgreSQL, e.g., via `psql`):
