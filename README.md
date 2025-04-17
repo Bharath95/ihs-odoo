@@ -32,19 +32,6 @@ This is our custom Odoo project. All custom modules go into `custom_addons/`.
    - This will place the Odoo source in the `odoo/` directory, which is ignored by git.
    - You can change the version by modifying the `--branch` parameter (e.g., `16.0`, `17.0`, etc.).
 
-
-## Dependency Installation
-
-Install dependencies from both root and `odoo/requirements.txt`; update environment as follows:
-
-```sh
-pip3 install -r requirements.txt
-cd odoo
-pip3 install -r requirements.txt
-```
-
-This ensures all required Python packages for both the project and the Odoo source are installed.
-
 ## PostgreSQL Setup
 
 Before running Odoo, make sure you have PostgreSQL running and a database/user created with the credentials specified in `odoo.conf`:
@@ -81,12 +68,15 @@ Make sure these values match your `odoo.conf` file. You can change the database 
    ```sh
    python3 -m venv .venv
    source .venv/bin/activate
-   ```
+   ``'
+   
+2. **Install dependencies from both root and `odoo/requirements.txt`:**
 
-2. **Install all dependencies:**
-   ```sh
-   pip3 install -r requirements.txt
-   ```
+```sh
+pip3 install -r requirements.txt
+cd odoo
+pip3 install -r requirements.txt
+```
 
 3. **(First time only) Install pre-commit hooks:**
    ```sh
