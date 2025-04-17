@@ -32,12 +32,6 @@ This is our custom Odoo project. All custom modules go into `custom_addons/`.
    - This will place the Odoo source in the `odoo/` directory, which is ignored by git.
    - You can change the version by modifying the `--branch` parameter (e.g., `16.0`, `17.0`, etc.).
 
-## PostgreSQL Setup
-
-Before running Odoo, make sure you have PostgreSQL running and a database/user created with the credentials specified in `odoo.conf`:
-
-- **Database user:** odoo
-- **Database password:** odoo
 
 ## Dependency Installation
 
@@ -50,6 +44,13 @@ pip3 install -r requirements.txt
 ```
 
 This ensures all required Python packages for both the project and the Odoo source are installed.
+
+## PostgreSQL Setup
+
+Before running Odoo, make sure you have PostgreSQL running and a database/user created with the credentials specified in `odoo.conf`:
+
+- **Database user:** odoo
+- **Database password:** odoo
 - **Database name:** ihs_root
 
 You can create the user and database with the following commands (run as a user with permission to manage PostgreSQL, e.g., via `psql`):
