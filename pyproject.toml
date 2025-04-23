@@ -1,6 +1,6 @@
 [tool.ruff]
 lint.select = ["ALL"]
-lint.ignore = ["F821", "F823", "F841", "E501", "INP001", "D100", "D101", "D205", "D400", "D415", "ANN201"]
+lint.ignore = ["F821", "F823", "F841", "E501", "INP001", "D100", "D101", "D205", "D400", "D415", "ANN201", "ANN101"]
 line-length = 100
 fix = true
 exclude = [
