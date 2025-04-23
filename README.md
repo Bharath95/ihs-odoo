@@ -68,12 +68,15 @@ Make sure these values match your `odoo.conf` file. You can change the database 
    ```sh
    python3 -m venv .venv
    source .venv/bin/activate
-   ```
+   ``'
+   
+2. **Install dependencies from both root and `odoo/requirements.txt`:**
 
-2. **Install all dependencies:**
-   ```sh
-   pip3 install -r requirements.txt
-   ```
+```sh
+pip3 install -r requirements.txt
+cd odoo
+pip3 install -r requirements.txt
+```
 
 3. **(First time only) Install pre-commit hooks:**
    ```sh
