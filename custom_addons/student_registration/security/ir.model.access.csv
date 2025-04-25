@@ -1,0 +1,16 @@
+# id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+# access_student_registration_user,student.registration.user,model_student_registration,student_registration.group_student_registration_user,1,1,1,0
+# access_student_registration_manager,student.registration.manager,model_student_registration,student_registration.group_student_registration_manager,1,1,1,1
+# access_student_profile_user,student.profile.user,model_student_profile,student_registration.group_student_registration_user,1,1,1,0
+# access_student_profile_manager,student.profile.manager,model_student_profile,student_registration.group_student_registration_manager,1,1,1,1
+# access_student_emergency_contact_user,student.emergency.contact.user,model_student_emergency_contact,student_registration.group_student_registration_user,1,1,1,1
+# access_student_emergency_contact_manager,student.emergency.contact.manager,model_student_emergency_contact,student_registration.group_student_registration_manager,1,1,1,1
+# access_student_family_details_user,student.family.details.user,model_student_family_details,student_registration.group_student_registration_user,1,1,1,1
+# access_student_family_details_manager,student.family.details.manager,model_student_family_details,student_registration.group_student_registration_manager,1,1,1,1
+# access_student_previous_school_user,student.previous.school.user,model_student_previous_school,student_registration.group_student_registration_user,1,1,1,1
+# access_student_previous_school_manager,student.previous.school.manager,model_student_previous_school,student_registration.group_student_registration_manager,1,1,1,1
+# access_student_guardian_user,student.guardian.user,model_student_guardian,student_registration.group_student_registration_user,1,1,1,1
+# access_student_guardian_manager,student.guardian.manager,model_student_guardian,student_registration.group_student_registration_manager,1,1,1,1
+# access_proof_type_user,proof.type.user,model_proof_type,student_registration.group_student_registration_user,1,0,0,0
+# access_proof_type_manager,proof.type.manager,model_proof_type,student_registration.group_student_registration_manager,1,1,1,1
+# access_student_portal_profile,student.portal.profile,model_student_profile,student_registration.group_student_portal_profile,1,1,0,0

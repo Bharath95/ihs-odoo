@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Error Template -->
+    <template id="registration_error_template" name="Registration Error">
+        <t t-call="website.layout">
+            <div class="container mt-5">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="card-header bg-danger text-white">
+                                <h4 class="m-0">Error</h4>
+                            </div>
+                            <div class="card-body">
+                                <p t-esc="error_message" class="lead text-danger"/>
+                                <div class="text-center mt-4">
+                                    <a href="/my/home" class="btn btn-primary">Go to My Account</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <!-- SSO Auto Redirect Template -->
+    <template id="sso_auto_redirect" name="SSO Auto Redirect">
+        <t t-call="website.layout">
+            <div class="container mt-5">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="card-header bg-primary text-white">
+                                <h4 class="m-0">Authentication Required</h4>
+                            </div>
+                            <div class="card-body">
+                                <p class="lead">You need to be logged in to access the student registration form.</p>
+                                <div class="text-center mt-4">
+                                    <a t-att-href="'/web/login?redirect=' + (request.httprequest.url or '')" class="btn btn-primary">Sign In</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <!-- Student Registration Full Form Template -->
+    <template id="student_registration_full_form" name="Student Registration Form">
+        <t t-call="website.layout">
+            <div class="container py-5" id="student-registration-form-container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card shadow">
+                            <div class="card-header bg-primary text-white">
+                                <h3 class="m-0">Student Registration Form</h3>
+                            </div>
+                            <div class="card-body">
+                                <!-- Form Header -->
+                                <div class="row mb-4">
+                                    <div class="col-md-12">
+                                        <div class="alert alert-info">
+                                            <p>Please fill out all required fields in each section of this form. Fields marked with * are mandatory.</p>
+                                            <p>Your progress will be automatically saved as you move between sections.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Form Sections Tabs -->
+                                <ul class="nav nav-tabs" id="formSectionTabs" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" id="personal-info-tab" data-toggle="tab" href="#personal-info" role="tab">
+                                            Personal Information
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="academic-info-tab" data-toggle="tab" href="#academic-info" role="tab">
+                                            Academic Information
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="health-info-tab" data-toggle="tab" href="#health-info" role="tab">
+                                            Health Information
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="parent-info-tab" data-toggle="tab" href="#parent-info" role="tab">
+                                            Parents &amp; Payment
+                                        </a>
+                                    </li>
+                                </ul>
+
+                                <!-- Form Content -->
+                                <div class="tab-content p-3 border border-top-0 rounded-bottom" id="formSectionContent">
+                                    <!-- Personal Information Tab -->
+                                    <div class="tab-pane fade show active" id="personal-info" role="tabpanel">
+                                        <form id="personal-info-form">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <h4 class="mb-3">Basic Information</h4>
+                                                </div>
+                                                <!-- Basic personal fields go here -->
+                                            </div>
+                                            <div class="row mt-4">
+                                                <div class="col-md-12 text-right">
+                                                    <button type="button" class="btn btn-primary save-section-button" data-section="1">Save &amp; Continue</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                    <!-- Academic Information Tab -->
+                                    <div class="tab-pane fade" id="academic-info" role="tabpanel">
+                                        <form id="academic-info-form">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <h4 class="mb-3">Current/Previous School Information</h4>
+                                                </div>
+                                                <!-- Academic fields go here -->
+                                            </div>
+                                            <div class="row mt-4">
+                                                <div class="col-md-12 text-right">
+                                                    <button type="button" class="btn btn-secondary go-back-button">Back</button>
+                                                    <button type="button" class="btn btn-primary save-section-button" data-section="2">Save &amp; Continue</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                    <!-- Health Information Tab -->
+                                    <div class="tab-pane fade" id="health-info" role="tabpanel">
+                                        <form id="health-info-form">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <h4 class="mb-3">Health Details</h4>
+                                                </div>
+                                                <!-- Health fields go here -->
+                                            </div>
+                                            <div class="row mt-4">
+                                                <div class="col-md-12 text-right">
+                                                    <button type="button" class="btn btn-secondary go-back-button">Back</button>
+                                                    <button type="button" class="btn btn-primary save-section-button" data-section="3">Save &amp; Continue</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                    <!-- Parent Information Tab -->
+                                    <div class="tab-pane fade" id="parent-info" role="tabpanel">
+                                        <form id="parent-info-form">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <h4 class="mb-3">Parent/Guardian Information</h4>
+                                                </div>
+                                                <!-- Parent fields go here -->
+                                            </div>
+                                            <div class="row mt-4">
+                                                <div class="col-md-12 text-right">
+                                                    <button type="button" class="btn btn-secondary go-back-button">Back</button>
+                                                    <button type="button" class="btn btn-success save-section-button" data-section="4">Submit Application</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>
