@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- COMMENTED OUT TREE VIEW -->
+        <!--
+        <record id="view_student_admission_tree" model="ir.ui.view">
+            <field name="name">student.admission.tree.minimal</field>
+            <field name="model">student.admission</field>
+            <field name="arch" type="xml">
+                <tree string="Student Admissions Minimal">
+                    <field name="full_name"/>
+                </tree>
+            </field>
+        </record>
+        -->
+
+        <!-- Form View - ISOLATED FOR TESTING -->
+        <record id="view_student_admission_form" model="ir.ui.view">
+            <field name="name">student.admission.form</field>
+            <field name="model">student.admission</field>
+            <field name="arch" type="xml">
+                <form string="Student Admission">
+                    <sheet>
+                       <!-- Only include one or two fields for minimal test -->
+                        <group>
+                            <field name="full_name"/>
+                            <field name="applied_for"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Action Window - Ensure view_mode is 'form' only -->
+        <record id="action_student_admission" model="ir.actions.act_window">
+            <field name="name">Student Admissions</field>
+            <field name="res_model">student.admission</field>
+            <field name="view_mode">form</field> <!-- Test with only form -->
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new student admission record.
+                </p>
+            </field>
+        </record>
+
+        <!-- Menu Item -->
+         <menuitem id="menu_admissions_root" name="Admissions" sequence="10"/>
+         <menuitem id="menu_student_admission" name="Applications" parent="menu_admissions_root" action="action_student_admission" sequence="10"/>
+
+    </data>
+</odoo>
