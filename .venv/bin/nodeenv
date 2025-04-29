@@ -1,4 +1,4 @@
-#!/Users/bharath/Documents/ihs-odoo/.venv/bin/python3.12
+#!/home/isha/Desktop/FrontBack/ihs-odoo/.venv/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys
